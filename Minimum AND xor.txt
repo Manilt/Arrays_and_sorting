@@ -1,0 +1,12 @@
+def func(s):
+    s.sort()
+    m = 999999
+    a = s[0]
+    for b in s[1:]:
+        tmp,a=(a&b)^(a|b),b
+        if tmp<m:
+            m = tmp
+    return m
+for _ in range(int(input())):
+    N = input()
+    print(func(list(map(int,input().split()))))
